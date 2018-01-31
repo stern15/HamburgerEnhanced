@@ -6,21 +6,39 @@ public class HealthyHamburger extends Hamburger {
     private double healthyPrice;
 
     public HealthyHamburger() {
-        super("brown", "gluten");
+        super(5, 6);
         this.saladPrice = 1.30;
         this.tofuPrice = 1.45;
         this.healthyPrice = super.getPrice();
     }
 
-    public double getHealthyPrice() {
+
+
+    public double getPrice() {
         return healthyPrice;
     }
 
-    public double addSalad(){
-        return healthyPrice+=saladPrice;
+    public void addLettuce() {
+        healthyPrice += super.getLettucePrice();
+    }
+
+    public void addTomato() {
+       healthyPrice += super.getTomatoPrice();
+    }
+
+    public void addCarrot() {
+        healthyPrice += super.getCarrotPrice();
+    }
+
+    public void addSauce() {
+        healthyPrice += super.getSaucePrice();
+    }
+    public void addSalad() {
+        healthyPrice += saladPrice;
 
     }
-    public double addTofu(){
-        return healthyPrice+=tofuPrice;
+
+    public void addTofu() {
+        healthyPrice += tofuPrice;
     }
 }

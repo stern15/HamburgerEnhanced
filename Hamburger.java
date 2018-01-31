@@ -1,81 +1,65 @@
 package com.challenge;
 
 public class Hamburger {
-    private String rollType;
-    private String meatType;
+    private int rollType;
+    private int meatType;
     private double basePrice;
     private double lettucePrice;
     private double tomatoPrice;
     private double carrotPrice;
     private double saucePrice;
 
-    public Hamburger(String rollType, String meatType) {
+    public Hamburger(int rollType, int meatType) {
         switch (rollType) {
-            case "bun":
+            case 1:
                 this.basePrice = 1.20;
                 break;
-            case "flat":
+            case 2:
                 this.basePrice = 1.35;
                 break;
-            case "yeast":
+            case 3:
                 this.basePrice = 1.50;
                 break;
-            case "sweet":
+            case 4:
                 this.basePrice = 1.60;
                 break;
-            case "corn":
+            case 5:
                 this.basePrice = 1.80;
                 break;
-            case "brown":
-                this.basePrice = 1.35;
-                break;
-            case "deluxe":
+            case 6:
                 this.basePrice = 2.00;
                 break;
             default:
                 System.out.println("\n" +
-                        "Unknown type of roll bread, Please select among:" +
-                        "\n-flat " +
-                        "\n-yeast" +
-                        "\n-sweet" +
-                        "\n-corn"+
-                        "\n-brown"+
-                        "\n-deluxe");
+                        "Unknown type of roll bread, Please select a number among the list above...");
                 break;
         }
         {
             switch (meatType) {
-                case "steak":
+                case 1:
                     this.basePrice += 0;
                     break;
-                case "grind":
+                case 2:
                     this.basePrice += 0.15;
                     break;
-                case "patties":
+                case 3:
                     this.basePrice += 0.35;
                     break;
-                case "chuck":
+                case 4:
                     this.basePrice += 0.10;
                     break;
-                case "grass-fed":
+                case 5:
                     this.basePrice += 0.05;
                     break;
-                case "gluten":
+                case 6:
                     this.basePrice += 0.90;
                     break;
-                case "deluxe":
+                case 7:
                     this.basePrice += 1.10;
                     break;
                 default:
                     System.out.println("\n" +
-                            "Unknown type of meat, Please select among:" +
-                            "\n-steak" +
-                            "\n-grind" +
-                            "\n-patties" +
-                            "\n-chuck" +
-                            "\n-grass-fed"+
-                            "\n-gluten"+
-                            "\n-deluxe");
+                            "Unknown type of meat, Please select a number among the list above...");
                     break;
             }
             this.lettucePrice = 0.50;
@@ -85,28 +69,40 @@ public class Hamburger {
         }
     }
 
-    public String getMeatType() {
-        return meatType;
-    }
-
     public double getPrice() {
         return basePrice;
     }
 
-    public double addLettuce() {
-        return basePrice += lettucePrice;
+    public double getLettucePrice() {
+        return lettucePrice;
     }
 
-    public double addTomato() {
-        return basePrice += tomatoPrice;
+    public double getTomatoPrice() {
+        return tomatoPrice;
     }
 
-    public double addCarrot() {
-        return basePrice += carrotPrice;
+    public double getCarrotPrice() {
+        return carrotPrice;
     }
 
-    public double addSauce() {
-        return basePrice += saucePrice;
+    public double getSaucePrice() {
+        return saucePrice;
+    }
+
+    public void addLettuce() {
+        basePrice += lettucePrice;
+    }
+
+    public void addTomato() {
+        basePrice += tomatoPrice;
+    }
+
+    public void addCarrot() {
+        basePrice += carrotPrice;
+    }
+
+    public void addSauce() {
+        basePrice += saucePrice;
 
     }
 

@@ -6,26 +6,25 @@ public class DeluxeHamburger extends Hamburger {
     private double deluxePrice;
 
     public DeluxeHamburger() {
-        super("deluxe", "deluxe");
+        super(6, 7);
         this.chipsPrice = 2.00;
         this.drinksPrice = 2.50;
         this.deluxePrice = super.getPrice();
-
     }
 
     public double getDeluxePrice() {
         return deluxePrice;
     }
 
-    public double addChips() {
-        return deluxePrice += chipsPrice;
+    public void addChips() {
+        deluxePrice += chipsPrice;
     }
 
-    public double addDrinks() {
-        return deluxePrice += drinksPrice;
+    public void addDrinks() {
+        deluxePrice += drinksPrice;
     }
 
-    public double addFullPack() {
-        return deluxePrice += (drinksPrice + chipsPrice);
+    public void addFullPack() {
+        deluxePrice += (drinksPrice + chipsPrice);
     }
 }
